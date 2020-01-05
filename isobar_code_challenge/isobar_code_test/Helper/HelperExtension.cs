@@ -13,11 +13,11 @@ namespace isobar_code_test.Helper
     {
         public static string[] ReadFile(string path)
         {
-            string serverpath = HttpContext.Current.Server.MapPath(path);
+            string filepath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, path); 
             string[] lines = null;
-            if (File.Exists(serverpath))
+            if (File.Exists(filepath))
             {
-                lines = File.ReadAllLines(serverpath, Encoding.UTF8);
+                lines = File.ReadAllLines(filepath, Encoding.UTF8);
             }
             return lines;
         }

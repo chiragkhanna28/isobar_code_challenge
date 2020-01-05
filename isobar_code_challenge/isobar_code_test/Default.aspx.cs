@@ -24,7 +24,7 @@ namespace isobar_code_test
             {
                 client.BaseAddress = new Uri("http://localhost:56676/api/");
                  var input = new Input(address,noofresults);
-                var responseTask = client.PostAsJsonAsync<Input>("values", input);
+                var responseTask = client.PostAsJsonAsync<Input>("shortestDistance", input);
                 responseTask.Wait();
 
                 var result = responseTask.Result;

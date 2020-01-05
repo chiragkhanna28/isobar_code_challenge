@@ -6,12 +6,12 @@ using isobar_code_test.Models;
 
 namespace isobar_code_test.Controllers
 {
-    public class ValuesController : ApiController
+    public class ShortestDistanceController : ApiController
     {
         [HttpPost]
         public IHttpActionResult GetDistancesbetweenAddress([FromBody]Input input)
         {
-            string path = "~/Data/address list australia.txt";
+            string path = "Data\\address list australia.txt";
             Coords locationCoords = HelperExtension.GetLatLngFromAddress(input.Address);
             string[] lines = HelperExtension.ReadFile(path);
             List<Distance> distances = new List<Distance>();
@@ -27,7 +27,7 @@ namespace isobar_code_test.Controllers
             }
             if (distances.Count > 0)
             {
-                return Ok(distances.OrderBy(x => x.Distanceinkm).Take(input.NoOfResults));
+                return Ok(distances.OrderBy(x => x.Distanceinkm).Take(input.NoOfResults).ToList());
             }
             else
             {

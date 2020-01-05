@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Device.Location;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web;
 using System.Web.Script.Serialization;
-using System.Web.UI.HtmlControls;
 using isobar_code_test.Models;
 
 namespace isobar_code_test.Helper
@@ -30,10 +27,10 @@ namespace isobar_code_test.Helper
             {
                 using (var client = new WebClient())
                 {
-                    string uri = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + Constants.APIKey;
-                    string geocodeInfo = client.DownloadString(uri);
-                    JavaScriptSerializer oJS = new JavaScriptSerializer();
-                    GoogleGeoCodeResp latlongdata = oJS.Deserialize<GoogleGeoCodeResp>(geocodeInfo);
+                    string mapurl = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + Constants.APIKey;
+                    string geocodeInfo = client.DownloadString(mapurl);
+                    JavaScriptSerializer javaScriptSerializer = new JavaScriptSerializer();
+                    GoogleGeoCodeResp latlongdata = javaScriptSerializer.Deserialize<GoogleGeoCodeResp>(geocodeInfo);
                     return new Coords(Convert.ToDouble(latlongdata.results[0].geometry.location.lat), Convert.ToDouble(latlongdata.results[0].geometry.location.lng));
                 }
             }

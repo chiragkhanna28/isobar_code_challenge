@@ -2,10 +2,8 @@
 using isobar_code_test.Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -21,7 +19,7 @@ namespace isobar_code_test
         {
             string address = Address.Text;
             StringBuilder htmlTable = new StringBuilder();
-            int noofresults = 5;
+            int noofresults = Constants.noOfResults;
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:56676/api/");

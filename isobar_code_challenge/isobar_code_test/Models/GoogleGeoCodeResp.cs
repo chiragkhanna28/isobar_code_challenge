@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
+﻿
 namespace isobar_code_test.Models
 {
-
     public class GoogleGeoCodeResp
     {
         public string status { get; set; }

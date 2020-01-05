@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="heading-section">
-                        <asp:Label ID="Headinng" runat="server" Text="Get 5 closest locations near you" CssClass="heading"></asp:Label>
+                        <asp:Label ID="Heading" runat="server" Text="Get 5 closest locations near you" CssClass="heading"></asp:Label>
                     </div>
                     <div class="section input-section">
                         <asp:Label ID="AddressLabel" runat="server" Text="Please enter the address"></asp:Label>
@@ -22,6 +22,9 @@
                     </div>
                     <div class="section output-section">
                         <asp:PlaceHolder ID="DynamicDataPlaceHolder" runat="server"></asp:PlaceHolder>
+                    </div>
+                    <div class="section error-section">
+                        <asp:Label ID="ErrorMessage" runat="server" Text="Sorry we are unable to process you request" CssClass="error-message" Visible="false"></asp:Label>
                     </div>
                 </div>
     </div>

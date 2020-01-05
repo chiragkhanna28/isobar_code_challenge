@@ -22,13 +22,13 @@ namespace isobar_code_test {
         protected global::System.Web.UI.HtmlControls.HtmlForm Form1;
         
         /// <summary>
-        /// Headinng control.
+        /// Heading control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Headinng;
+        protected global::System.Web.UI.WebControls.Label Heading;
         
         /// <summary>
         /// AddressLabel control.
@@ -65,5 +65,14 @@ namespace isobar_code_test {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.PlaceHolder DynamicDataPlaceHolder;
+        
+        /// <summary>
+        /// ErrorMessage control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ErrorMessage;
     }
 }

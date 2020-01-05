@@ -17,26 +17,43 @@ namespace isobar_code_test.Helper
         public static string[] ReadFile(string path)
         {
             string serverpath = HttpContext.Current.Server.MapPath(path);
-            string[] lines = File.ReadAllLines(serverpath, Encoding.UTF8);
+            string[] lines = null;
+            if (File.Exists(serverpath))
+            {
+                lines = File.ReadAllLines(serverpath, Encoding.UTF8);
+            }
             return lines;
         }
         public static Coords GetLatLngFromAddress(string address)
         {
-            using (var client = new WebClient())
+            try
             {
-                string uri = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + Constants.APIKey;
-                string geocodeInfo = client.DownloadString(uri);
-                JavaScriptSerializer oJS = new JavaScriptSerializer();
-                GoogleGeoCodeResp latlongdata = oJS.Deserialize<GoogleGeoCodeResp>(geocodeInfo);
-                return new Coords(Convert.ToDouble(latlongdata.results[0].geometry.location.lat), Convert.ToDouble(latlongdata.results[0].geometry.location.lng));
+                using (var client = new WebClient())
+                {
+                    string uri = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + Constants.APIKey;
+                    string geocodeInfo = client.DownloadString(uri);
+                    JavaScriptSerializer oJS = new JavaScriptSerializer();
+                    GoogleGeoCodeResp latlongdata = oJS.Deserialize<GoogleGeoCodeResp>(geocodeInfo);
+                    return new Coords(Convert.ToDouble(latlongdata.results[0].geometry.location.lat), Convert.ToDouble(latlongdata.results[0].geometry.location.lng));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error in GetLatLngFromAddress Method " + ex.Message);
             }
         }
         
         public static double GetDistanceBetweenTwoPoints(Coords startLocation,Coords destinationLocation)
         {
-            var startCoord = new GeoCoordinate(startLocation.Latitude, startLocation.Longitude);
-            var destinationCoord = new GeoCoordinate(destinationLocation.Latitude, destinationLocation.Longitude);
-            return Math.Round(startCoord.GetDistanceTo(destinationCoord)/1000,2);
+            try
+            {
+                var startCoord = new GeoCoordinate(startLocation.Latitude, startLocation.Longitude);
+                var destinationCoord = new GeoCoordinate(destinationLocation.Latitude, destinationLocation.Longitude);
+                return Math.Round(startCoord.GetDistanceTo(destinationCoord) / 1000, 2);
+            }catch(Exception ex)
+            {
+                throw new Exception("Error in GetDistanceBetweenTwoPoints Method " + ex.Message);
+            }
         }
     }
 }

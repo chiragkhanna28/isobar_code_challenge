@@ -1,0 +1,17 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+.heading{
+    font-size:20px;
+    font-weight:bold;
+}
+.section{
+    margin:15px auto;
+}
+.input-section input.Address{
+    width: 350px;
+}
+td, th {
+    padding: 10px;
+}

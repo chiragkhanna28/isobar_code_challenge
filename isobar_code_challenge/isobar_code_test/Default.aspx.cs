@@ -21,11 +21,12 @@ namespace isobar_code_test
         {
             string address = Address.Text;
             StringBuilder htmlTable = new StringBuilder();
+            int noofresults = 5;
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:56676/api/");
-                //HTTP GET
-                var responseTask = client.PostAsJsonAsync<string>("values", address);
+                 var input = new Input(address,noofresults);
+                var responseTask = client.PostAsJsonAsync<Input>("values", input);
                 responseTask.Wait();
 
                 var result = responseTask.Result;
@@ -36,7 +37,7 @@ namespace isobar_code_test
                     readTask.Wait();
 
                     var distances = readTask.Result;
-                    htmlTable.Append("<table border='1'>");
+                    htmlTable.Append("<table border='1' cellpadding='10'>");
                     htmlTable.Append("<tr style='background-color:blue; color: White;'><th>Starting Location </th><th>Destination Location </th><th> Distance (in km)</th></tr>");
                     foreach (var distance in distances)
                     {

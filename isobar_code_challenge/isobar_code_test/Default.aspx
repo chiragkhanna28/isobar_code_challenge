@@ -12,17 +12,20 @@
         <form id="Form1" runat="server">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <asp:Label ID="AddressLabel" runat="server" Text="Please enter the address"></asp:Label>
-                    <asp:TextBox ID="Address" runat="server"></asp:TextBox>
-                    <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="Submit_Click" />
-
-
-                    <asp:PlaceHolder ID="DynamicDataPlaceHolder" runat="server"></asp:PlaceHolder>
-
-
+                    <div class="heading-section">
+                        <asp:Label ID="Headinng" runat="server" Text="Get 5 closest locations near you" CssClass="heading"></asp:Label>
+                    </div>
+                    <div class="section input-section">
+                        <asp:Label ID="AddressLabel" runat="server" Text="Please enter the address"></asp:Label>
+                        <asp:TextBox ID="Address" runat="server" CssClass="Address"></asp:TextBox>
+                        <asp:Button ID="Submit" runat="server" Text="Submit" OnClick="Submit_Click" />
+                    </div>
+                    <div class="section output-section">
+                        <asp:PlaceHolder ID="DynamicDataPlaceHolder" runat="server"></asp:PlaceHolder>
+                    </div>
                 </div>
-            </div>
-        </form>
+    </div>
+    </form>
     </div>
 </body>
 </html>

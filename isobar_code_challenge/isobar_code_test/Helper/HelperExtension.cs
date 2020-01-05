@@ -24,7 +24,7 @@ namespace isobar_code_test.Helper
         {
             using (var client = new WebClient())
             {
-                string uri = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + Models.Constants.APIKey;
+                string uri = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + "&key=" + Constants.APIKey;
                 string geocodeInfo = client.DownloadString(uri);
                 JavaScriptSerializer oJS = new JavaScriptSerializer();
                 GoogleGeoCodeResp latlongdata = oJS.Deserialize<GoogleGeoCodeResp>(geocodeInfo);

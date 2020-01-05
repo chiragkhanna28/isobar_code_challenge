@@ -1,9 +1,9 @@
-﻿<%@ Page Title="Home Page" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="isobar_code_test._Default" %>
+﻿<%@ Page Title="Isobar Code Test" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="isobar_code_test._Default" %>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Isobar Code Test</title>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
 </head>

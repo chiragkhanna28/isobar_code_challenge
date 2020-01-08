@@ -1,4 +1,5 @@
 ﻿using isobar_code_challenge.Helper;
+using isobar_code_challenge.Logger;
 using isobar_code_challenge.Models;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,7 @@ namespace isobar_code_challenge.Controllers
             }
             else
             {
+                Log.Info("No results found");
                 return NotFound();
             }
         }

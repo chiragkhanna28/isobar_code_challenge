@@ -1,4 +1,5 @@
-﻿using isobar_code_challenge.Models;
+﻿using isobar_code_challenge.Logger;
+using isobar_code_challenge.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -34,10 +35,12 @@ namespace isobar_code_challenge.Controllers
                     var distances = readTask.Result;
                     distanceList.Distances = distances;
                     distanceList.Success = true;
+                    Log.Info("Status from Web api is OK");
                 }
                 else
                 {
                     distanceList.Success = false;
+                    Log.Info("Status from Web api is Not found");
                 }
             }
             return View(distanceList);

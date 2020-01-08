@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isobar_code_test", "isobar_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isobar_code_test.Tests", "isobar_code_test.Tests\isobar_code_test.Tests.csproj", "{449D080B-8C1D-41A3-BEAD-DAAEAA1AD91B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isobar_code_challenge", "isobar_code_challenge\isobar_code_challenge.csproj", "{191EF895-BA5E-4BE1-9A4B-07B853673AA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "isobar_code_challenge.Tests", "isobar_code_challenge.Tests\isobar_code_challenge.Tests.csproj", "{F0570931-84D9-4B40-8DF2-246B35CD77BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{449D080B-8C1D-41A3-BEAD-DAAEAA1AD91B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{449D080B-8C1D-41A3-BEAD-DAAEAA1AD91B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{449D080B-8C1D-41A3-BEAD-DAAEAA1AD91B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191EF895-BA5E-4BE1-9A4B-07B853673AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191EF895-BA5E-4BE1-9A4B-07B853673AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191EF895-BA5E-4BE1-9A4B-07B853673AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191EF895-BA5E-4BE1-9A4B-07B853673AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0570931-84D9-4B40-8DF2-246B35CD77BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0570931-84D9-4B40-8DF2-246B35CD77BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0570931-84D9-4B40-8DF2-246B35CD77BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0570931-84D9-4B40-8DF2-246B35CD77BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

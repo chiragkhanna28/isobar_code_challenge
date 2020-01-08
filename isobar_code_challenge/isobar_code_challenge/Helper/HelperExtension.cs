@@ -1,4 +1,5 @@
-﻿using isobar_code_challenge.Models;
+﻿using isobar_code_challenge.Logger;
+using isobar_code_challenge.Models;
 using System;
 using System.Device.Location;
 using System.IO;
@@ -35,6 +36,7 @@ namespace isobar_code_challenge.Helper
             }
             catch (Exception ex)
             {
+                Log.Info("Exception in GetLatLngFromAddress Method", ex);
                 throw new Exception("Error in GetLatLngFromAddress Method " + ex.Message);
             }
         }
@@ -49,6 +51,7 @@ namespace isobar_code_challenge.Helper
             }
             catch (Exception ex)
             {
+                Log.Info("Exception in GetLatLngFromAddress Method", ex);
                 throw new Exception("Error in GetDistanceBetweenTwoPoints Method " + ex.Message);
             }
         }

@@ -1,0 +1,3 @@
+﻿2020-01-08 16:23:32,380 [6] INFO  MonitoringLogger [(null)] - Status from Web api is OK
+2020-01-08 16:24:44,178 [6] INFO  MonitoringLogger [(null)] - Status from Web api is OK
+2020-01-08 16:26:20,440 [6] INFO  MonitoringLogger [(null)] - Status from Web api is OK

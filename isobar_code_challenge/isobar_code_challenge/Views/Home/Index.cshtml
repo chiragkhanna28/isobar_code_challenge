@@ -1,0 +1,45 @@
+﻿@model isobar_code_challenge.Models.DistanceList
+@{
+    ViewBag.Title = "";
+}
+
+
+<div class="row">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="section input-section">
+            <h1 class="heading">Get 5 closest locations near you</h1>
+            @using (@Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                @Html.AntiForgeryToken()
+                @Html.Label("address", "Please enter the address below ")
+                @Html.TextBox("address", null, new { @class = "address" })
+                <input type="submit" />
+            }
+        </div>
+
+        @if (Model != null && Model.Distances != null)
+        {
+            <div class="section output-section">
+                <table border='1'>
+                    <tr style='background-color:blue; color: White;'>
+                        <th>Starting Location</th>
+                        <th>Destination Location</th>
+                        <th>Distance (in km)</th>
+                    </tr>
+                    @foreach (var state in Model.Distances)
+                    {
+                        <tr>
+                            <td>@state.StartLocation</td>
+                            <td>@state.DestinationLocation</td>
+                            <td>@state.Distanceinkm</td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        }
+        else if (Model != null && Model.Success == false)
+        {
+            <p class="no-results"> No Results found</p>
+        }
+    </div>
+</div>
